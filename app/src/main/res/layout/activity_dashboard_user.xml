@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".dashboard_user">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="Inventory Stock"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:id="@+id/inventory"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:text="Divisi TI"
+        android:textColor="@color/primary"
+        android:textSize="20dp"
+        android:id="@+id/divisi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:text="PT. Perkebunan Nusantara III"
+        android:textColor="@color/primary"
+        android:textSize="15dp"
+        android:id="@+id/ptpn"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/box"/>
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/stok_user"
+        android:background="@drawable/dasboard"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="70dp"
+        android:text="Stok Barang"
+        android:textColor="@color/primary"
+        android:textSize="15dp"
+        android:id="@+id/stok"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="100dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@color/primary"
+        android:layout_below="@+id/stok"
+        android:id="@+id/jmlhstok"/>
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/trpki_user"
+        android:background="@drawable/dasboard"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="250dp"
+        android:text="Terpakai"
+        android:textColor="@color/primary"
+        android:textSize="15dp"
+        android:id="@+id/txtterpakai"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="260dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@color/primary"
+        android:layout_below="@+id/txtterpakai"
+        android:id="@+id/jmlhbrg"/>
+
+    <ImageButton
+        android:id="@+id/cek"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="90dp"
+        android:src="@drawable/cari"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="73dp"
+        android:text="Cek Barang"
+        android:textSize="15dp"
+        android:textColor="@color/primary"
+        android:id="@+id/txtsemuabrg"/>
+
+    <ImageButton
+        android:id="@+id/kategori"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="260dp"
+        android:src="@drawable/kategori"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="230dp"
+        android:text="Kategori Barang"
+        android:textSize="15dp"
+        android:textColor="@color/primary"
+        android:id="@+id/txtkategori"/>
+
+    <ImageButton
+        android:id="@+id/tambah"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginLeft="90dp"
+        android:src="@drawable/semuabrg"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="62dp"
+        android:text="Semua Barang"
+        android:textColor="@color/primary"
+        android:textSize="15dp"
+        android:id="@+id/txttambah"/>
+
+    <ImageButton
+        android:id="@+id/lihat"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginLeft="260dp"
+        android:src="@drawable/stok"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="248dp"
+        android:textColor="@color/primary"
+        android:text="Lihat Stok"
+        android:textSize="15dp"
+        android:id="@+id/txtlihat"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/underbox"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

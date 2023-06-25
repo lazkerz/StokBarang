@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".hapusbrg">
+
+
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/back"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Hapus Stok"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="20dp"
+        android:id="@+id/hps"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ktk"
+        android:layout_below="@+id/hps"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/second"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hps"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="NO INVENTARIS"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textno"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:hint="No Inventaris"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textnamabrg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="NAMA BARANG"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/namabrg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textnamabrg"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:hint="nama barang"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textnrk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namabrg"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="NRK"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nrk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textnrk"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:hint="Nrk"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textnama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nrk"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="NAMA PENGGUNA"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textnama"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:hint="Nama"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textjbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nama"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="JABATAN"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/jbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textjbtn"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:hint="Jabatan"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txttgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jbtn"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="TANGGAL TERIMA"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txttgl"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:hint="Tanggal diterima"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ktk"
+        android:background="@drawable/btn_hapus"
+        android:scaleType="center"
+        android:id="@+id/btnhapus"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/underbox2"/>
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/home"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict"/>
+
+</RelativeLayout>

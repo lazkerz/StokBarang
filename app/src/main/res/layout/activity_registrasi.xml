@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".Registrasi">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:text="REGISTER"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="30dp"
+        android:id="@+id/register"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="NRK"
+        android:textSize="15dp"
+        android:id="@+id/nrk"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:hint="Masukkan NRK"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Nrk"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="Nama Lengkap"
+        android:textSize="15dp"
+        android:id="@+id/txtnama"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Nama Lengkap"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtnama"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="Email"
+        android:textSize="15dp"
+        android:id="@+id/txtemail"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Email Anda"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtemail"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="Username"
+        android:textSize="15dp"
+        android:id="@+id/txtusername"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Username"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtusername"/>
+
+    <TextView
+        android:id="@+id/txtpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Password"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtpassword"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="Jabatan"
+        android:textSize="15dp"
+        android:id="@+id/txtjabatan"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Jabatan Anda"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtjabatan"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_register"
+        android:scaleType="center"
+        android:id="@+id/btnregis"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="Sudah Punya Akun ?"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:id="@+id/akun"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Login"
+        android:textColor="@color/black"
+        android:background="@android:color/transparent"
+        android:id="@+id/login"/>
+
+</LinearLayout>

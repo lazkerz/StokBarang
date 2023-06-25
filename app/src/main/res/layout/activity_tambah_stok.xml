@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".tambah_stok">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/back"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:text="Tambah Stok"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:textSize="20dp"
+        android:id="@+id/tmbhbarang"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/tmbhbarang"
+        android:textColor="@color/black"
+        android:text="No Inventaris"
+        android:textSize="15dp"
+        android:id="@+id/noinven"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:hint="Masukkan No Inventaris"
+        android:layout_below="@+id/noinven"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Noinven"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/Noinven"
+        android:textColor="@color/black"
+        android:text="Keterangan"
+        android:textSize="15dp"
+        android:id="@+id/txtket"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txtket"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Keterangan"
+        android:textSize="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtket"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/Txtket"
+        android:textColor="@color/black"
+        android:text="Tgl Penyerahan"
+        android:textSize="15dp"
+        android:id="@+id/txttgl"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txttgl"
+        android:paddingStart="10dp"
+        android:textSize="15dp"
+        android:hint="Pilih Tanggal"
+        android:inputType="none"
+        android:focusable="false"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txttgl"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/Txttgl"
+        android:textColor="@color/black"
+        android:text="Nama Barang"
+        android:textSize="15dp"
+        android:id="@+id/txtnama"/>
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtnama"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Nama Barang"
+        android:textSize="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtnama"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/Txtnama"
+        android:background="@drawable/btn_tmbh"
+        android:scaleType="center"
+        android:id="@+id/btntambah"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/underbox2"/>
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/home"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict"/>
+
+</RelativeLayout>
