@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 public class dashboard_adm extends AppCompatActivity {
 
-    ImageButton kategori, barang, lihatstok, tambah, hapus, ubahbrg;
+    ImageButton kategori, barang, lihatstok, tambah, hapus, ubahbrg, logout;
 
     TextView jmlhstok, jmlhbrg;
     @Override
@@ -32,6 +32,15 @@ public class dashboard_adm extends AppCompatActivity {
         ubahbrg = findViewById(R.id.ubahbrg);
         jmlhbrg = findViewById(R.id.jmlhbrg);
         jmlhstok = findViewById(R.id.jmlhstok);
+        logout = findViewById(R.id.logout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pindah = new Intent(dashboard_adm.this, Login.class);
+                startActivity(pindah);
+            }
+        });
 
         kategori.setOnClickListener(new View.OnClickListener() {
             @Override

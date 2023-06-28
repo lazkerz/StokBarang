@@ -4,26 +4,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class tambah_brg extends AppCompatActivity {
 
     ImageButton back, home, btntambah;
 
-    EditText Namabrg, Textid, Textno, Textnrk, Textnama, Textjabatan, Texttanggal;
+    EditText Textid, Textno, Textnrk, Textnama, Textjabatan, Texttanggal;
+
+    Spinner Namabrg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +42,8 @@ public class tambah_brg extends AppCompatActivity {
 
         back = findViewById(R.id.back);
         home = findViewById(R.id.home);
-        Namabrg = findViewById(R.id.Namabrng);
+//        Namabrg = findViewById(R.id.Namabrg);
+        Namabrg = findViewById(R.id.spinnerNamabrg);
         Textid = findViewById(R.id.Txtid);
         Textno = findViewById(R.id.Txtno);
         Textnrk = findViewById(R.id.Txtnrk);
@@ -85,7 +96,7 @@ public class tambah_brg extends AppCompatActivity {
         btntambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String namabrg = Namabrg.getText().toString();
+                String namabrg = Namabrg.getSelectedItem().toString();
                 String id = Textid.getText().toString();
                 String no = Textno.getText().toString();
                 String nrk= Textnrk.getText().toString();
@@ -117,6 +128,7 @@ public class tambah_brg extends AppCompatActivity {
                     statement.setString(8, kategori);
 
                     int rowsInserted = statement.executeUpdate();
+                    // Mengisi spinner dengan data dari database
                     if (rowsInserted > 0) {
                         Toast.makeText(tambah_brg.this, "Data Ditambahkan", Toast.LENGTH_LONG).show();
                         Intent pindah = new Intent(tambah_brg.this, SemuaBrg.class);
@@ -124,6 +136,7 @@ public class tambah_brg extends AppCompatActivity {
                     }else{
                         Toast.makeText(tambah_brg.this, "Data gagal Ditambahkan", Toast.LENGTH_LONG).show();
                     }
+
                     statement.close();
                     connection.close();
                 } catch (SQLException e) {
@@ -133,5 +146,53 @@ public class tambah_brg extends AppCompatActivity {
                 }
             }
         });
+        new LoadNamaBarangTask().execute();
+    }
+
+    private class LoadNamaBarangTask extends AsyncTask<Void, Void, List<String>> {
+        @Override
+        protected List<String> doInBackground(Void... params) {
+            List<String> namaBarangList = new ArrayList<>();
+
+            // Kode untuk mengambil data dari database Oracle
+            ConnectionClass connectionClass = new ConnectionClass();
+            Connection connection = connectionClass.CONN();
+            // Pastikan Anda telah melakukan koneksi database sebelumnya
+
+            try {
+                String query = "SELECT NAMA_KATEGORI FROM TB_KATEGORI";
+                PreparedStatement statement = connection.prepareStatement(query);
+                ResultSet resultSet = statement.executeQuery();
+
+                while (resultSet.next()) {
+                    String namaBarang = resultSet.getString("NAMA_KATEGORI");
+                    namaBarangList.add(namaBarang);
+                }
+
+                resultSet.close();
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return namaBarangList;
+        }
+
+        @Override
+        protected void onPostExecute(List<String> result) {
+            ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(tambah_brg.this,
+                    R.layout.spinner_item, result) {
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent) {
+                    View view = super.getView(position, convertView, parent);
+                    TextView textView = (TextView) view.findViewById(android.R.id.text1);
+                    textView.setTextColor(getResources().getColor(R.color.black)); // Ubah warna teks sesuai keinginan
+                    return view;
+                }
+            };
+
+            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            Namabrg.setAdapter(spinnerAdapter);
+        }
     }
 }
