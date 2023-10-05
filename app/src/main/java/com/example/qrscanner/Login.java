@@ -90,6 +90,14 @@ Login extends AppCompatActivity {
                                 Intent pindah = new Intent(Login.this, dashboard_user.class);
                                 pindah.putExtra("user", usn.getText().toString());
                                 startActivity(pindah);
+                            }else if (role.equals("Manajemen")) {
+                                Intent pindah = new Intent(Login.this, dashboard_manajemen.class);
+                                pindah.putExtra("user", usn.getText().toString());
+                                startActivity(pindah);
+                            }else if (role.equals("Pengadaan")) {
+                                Intent pindah = new Intent(Login.this, dashboard_pengadaan.class);
+                                pindah.putExtra("user", usn.getText().toString());
+                                startActivity(pindah);
                             }else {
                                 Toast.makeText(Login.this, "Peran pengguna tidak valid", Toast.LENGTH_LONG).show();
                             }

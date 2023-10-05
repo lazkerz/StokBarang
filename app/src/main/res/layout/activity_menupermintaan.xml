@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".menupermintaan"
+    >
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/back"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/back"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="PERMINTAAN BARANG"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:id="@+id/inventory"/>
+
+    <ImageButton
+        android:id="@+id/minta"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="90dp"
+        android:src="@drawable/cari"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="47dp"
+        android:text="Semua Permintaan"
+        android:textSize="15dp"
+        android:textColor="@color/primary"
+        android:id="@+id/txtsemuabrg"/>
+
+    <ImageButton
+        android:id="@+id/setuju"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="200dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="260dp"
+        android:src="@drawable/kategori"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="240dp"
+        android:text="Persetujuan"
+        android:textSize="15dp"
+        android:textColor="@color/primary"
+        android:id="@+id/txtkategori"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/underbox"/>
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/home"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict2"/>
+
+</RelativeLayout>

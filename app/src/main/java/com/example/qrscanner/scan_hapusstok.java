@@ -28,7 +28,7 @@ public class scan_hapusstok extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(scan_hapusstok.this, dashboard_adm.class);
+                Intent pindah = new Intent(scan_hapusstok.this, dashboard_pengadaan.class);
                 startActivity(pindah);
             }
         });

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 public class dashboard_user extends AppCompatActivity {
 
-    ImageButton cek, kategori, tambah, lihat, logout;
+    ImageButton cek, kategori, tambah, lihat, logout, minta;
 
     TextView jmlhstok, jmlhbrg;
 
@@ -29,6 +29,7 @@ public class dashboard_user extends AppCompatActivity {
         kategori = findViewById(R.id.kategori);
         tambah = findViewById(R.id.tambah);
         lihat = findViewById(R.id.lihat);
+        minta = findViewById(R.id.minta);
         jmlhbrg = findViewById(R.id.jmlhbrg);
         jmlhstok = findViewById(R.id.jmlhstok);
         logout = findViewById(R.id.logout);
@@ -38,6 +39,7 @@ public class dashboard_user extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_user.this, Login.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -46,6 +48,7 @@ public class dashboard_user extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_user.this, CekBrg.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -54,6 +57,7 @@ public class dashboard_user extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_user.this, kategori_user.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -62,6 +66,7 @@ public class dashboard_user extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_user.this, semuaBrg_user.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -70,6 +75,16 @@ public class dashboard_user extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_user.this, StokBrgUser.class);
                 startActivity(pindah);
+                finish();
+            }
+        });
+
+        minta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pindah = new Intent(dashboard_user.this, mintabrg.class);
+                startActivity(pindah);
+                finish();
             }
         });
 
@@ -78,7 +93,7 @@ public class dashboard_user extends AppCompatActivity {
 
         if (connection != null) {
             try {
-                String query = "SELECT COUNT(*) AS count FROM TB_STOK " +
+                String query = "SELECT COUNT(*) AS count FROM TB_STOCK " +
                         "UNION " +
                         "SELECT COUNT(*) AS count FROM TB_BARANG";
                 PreparedStatement statement = connection.prepareStatement(query);

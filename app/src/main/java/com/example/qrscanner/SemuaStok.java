@@ -36,7 +36,7 @@ public class SemuaStok extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(SemuaStok.this, dashboard_adm.class);
+                Intent pindah = new Intent(SemuaStok.this, dashboard_pengadaan.class);
                 startActivity(pindah);
             }
         });
@@ -44,7 +44,7 @@ public class SemuaStok extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(SemuaStok.this, dashboard_adm.class);
+                Intent pindah = new Intent(SemuaStok.this, dashboard_pengadaan.class);
                 startActivity(pindah);
             }
         });
@@ -78,9 +78,9 @@ public class SemuaStok extends AppCompatActivity {
         Connection connection = connectionClass.CONN();
 
         try {
-            String selectedCategory = getIntent().getStringExtra("NAMA_KATEGORI");
-            String query = "SELECT No_Inventaris, Keterangan, Tgl_Penyerahan, Nama_Barang, NAMA_KATEGORI " +
-                    "FROM TB_STOK WHERE NAMA_KATEGORI = ?" +
+            String selectedCategory = getIntent().getStringExtra("NAMA_BARANG");
+            String query = "SELECT NAMA_BARANG, JUMLAH, VENDOR, TGL_PENYERAHAN " +
+                    "FROM TB_STOCK WHERE NAMA_BARANG = ?" +
                     "ORDER BY Tgl_Penyerahan DESC";
 //           Statement statement = connection.createStatement();
             // Query SELECT
@@ -92,13 +92,12 @@ public class SemuaStok extends AppCompatActivity {
             // Loop melalui hasil resultSet
             while (resultSet.next()) {
                 // Mendapatkan nilai kolom
-                String noinventaris = resultSet.getString("No_Inventaris");
-                String Ket = resultSet.getString("Keterangan");
-                String tgl = resultSet.getString("Tgl_Penyerahan");
-                String namaBarang = resultSet.getString("Nama_Barang");
-                String kategoribrg = resultSet.getString("NAMA_KATEGORI");
+                String namabrg = resultSet.getString("NAMA_BARANG");
+                String Jlh = resultSet.getString("JUMLAH");
+                String Vendor = resultSet.getString("VENDOR");
+                String Tgl = resultSet.getString("TGL_PENYERAHAN");
 
-                Stok stok = new Stok(0, noinventaris, Ket, tgl, namaBarang, kategoribrg);
+                Stok stok = new Stok(0, namabrg, Jlh, Vendor, Tgl);
                 stokAdapter.addStok(stok);
             }
             stokAdapter.notifyDataSetChanged();

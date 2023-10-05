@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:orientation="vertical"
-    tools:context=".tambah_stok">
+    android:background="@color/white"
+    tools:context=".ubahpermintaan">
 
     <ImageButton
         android:id="@+id/back"
@@ -20,123 +19,148 @@
         android:background="@drawable/pict"/>
 
     <TextView
+        android:id="@+id/txtminta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/back"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif"
-        android:text="Tambah Stok"
+        android:layout_below="@+id/back"
+        android:text="Permintaan Barang"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/primary"
-        android:textSize="20dp"
-        android:id="@+id/tmbhstok"/>
+        ></TextView>
+
+    <TextView
+        android:id="@+id/txtnama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtminta"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Nama"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtnama"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Nama"
+        android:textSize="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/login"
+        android:id="@+id/Txtnama"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/tmbhstok"
+        android:layout_below="@+id/Txtnama"
         android:textColor="@color/black"
-        android:text="NAMA BARANG"
+        android:text="Nama Barang"
         android:textSize="15dp"
-        android:id="@+id/txtnamabrg"/>
+        android:id="@+id/namabrng"/>
 
     <EditText
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:paddingStart="10dp"
         android:hint="Masukkan Nama Barang"
-        android:layout_below="@+id/txtnamabrg"
+        android:layout_below="@+id/namabrng"
         android:layout_centerHorizontal="true"
         android:textSize="15dp"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:background="@drawable/login"
-        android:id="@+id/namabrg"/>
+        android:id="@+id/Namabrg"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Namabrg"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/namabrg"
         android:textColor="@color/black"
-        android:text="JUMLAH"
+        android:text="Tanggal Terima"
         android:textSize="15dp"
-        android:id="@+id/txtjlh"/>
-
-    <EditText
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/txtjlh"
-        android:layout_centerHorizontal="true"
-        android:paddingStart="10dp"
-        android:hint="Masukkan Jumlah"
-        android:textSize="15dp"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:background="@drawable/login"
-        android:id="@+id/Jmlh"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/Jmlh"
-        android:textColor="@color/black"
-        android:text="VENDOR"
-        android:textSize="15dp"
-        android:id="@+id/txtvendor"/>
+        android:id="@+id/txttanggal"/>
 
     <EditText
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/txtvendor"
+        android:layout_below="@+id/txttanggal"
         android:paddingStart="10dp"
-        android:hint="Masukkan Nama Vendor"
-        android:textSize="15dp"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:background="@drawable/login"
-        android:id="@+id/Vendor"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_below="@+id/Vendor"
-        android:textColor="@color/black"
-        android:text="Tgl Penyerahan"
-        android:textSize="15dp"
-        android:id="@+id/txttgl"/>
-
-    <EditText
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/txttgl"
-        android:paddingStart="10dp"
-        android:textSize="15dp"
         android:hint="Pilih Tanggal"
         android:inputType="none"
         android:focusable="false"
+        android:textSize="15dp"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:background="@drawable/login"
-        android:id="@+id/Tgl"/>
+        android:id="@+id/Txttanggal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/Txttanggal"
+        android:textColor="@color/black"
+        android:text="Keterangan"
+        android:textSize="15dp"
+        android:id="@+id/ket"/>
+
+    <Spinner
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Nama Barang"
+        android:layout_below="@+id/ket"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/back_spin"
+        android:id="@+id/spinnerket"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/spinnerket"
+        android:textColor="@color/black"
+        android:text="Keputusan"
+        android:textSize="15dp"
+        android:id="@+id/keputusan"/>
+
+    <Spinner
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:paddingStart="10dp"
+        android:hint="Masukkan Nama Barang"
+        android:layout_below="@+id/keputusan"
+        android:layout_centerHorizontal="true"
+        android:textSize="15dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:background="@drawable/back_spin"
+        android:id="@+id/spinnerkeputusan"/>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/Tgl"
-        android:background="@drawable/btn_tmbh"
+        android:layout_below="@+id/spinnerkeputusan"
+        android:background="@drawable/btn_ubahbrg"
         android:scaleType="center"
-        android:id="@+id/btntambah"/>
+        android:id="@+id/btnubah"/>
 
     <ImageView
         android:layout_width="match_parent"

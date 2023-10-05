@@ -97,7 +97,7 @@ public class TmbhKategori extends AppCompatActivity {
                     int rowsInserted = statement.executeUpdate();
 
                     if (rowsInserted > 0) {
-                        Toast.makeText(TmbhKategori.this, "Data Ditambahkan", Toast.LENGTH_LONG).show();
+                        Toast.makeText(TmbhKategori.this, "Data Ditambahkan ke kategori,silahkan gunakan kategori di tambah barang", Toast.LENGTH_LONG).show();
                     }
                     statement.close();
                     connection.close();
@@ -117,7 +117,7 @@ public class TmbhKategori extends AppCompatActivity {
 
             try {
                 String query = "SELECT NAMA_KATEGORI, COUNT(*) AS count FROM TB_BARANG " +
-                        "WHERE NAMA_KATEGORI IN (SELECT NAMA_KATEGORI FROM TB_STOK) " +
+                        "WHERE NAMA_KATEGORI IN (SELECT NAMA_KATEGORI FROM TB_KATEGORI) " +
                         "GROUP BY NAMA_KATEGORI";
                 //            Statement statement = connection.createStatement();
                 // Query SELECT

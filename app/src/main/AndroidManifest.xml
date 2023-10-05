@@ -17,6 +17,33 @@
         android:theme="@style/Theme.QRSCANNER"
         tools:targetApi="31">
         <activity
+            android:name=".permintaanbrg"
+            android:exported="false" />
+        <activity
+            android:name=".menupermintaan"
+            android:exported="false" />
+        <activity
+            android:name=".ubahpermintaan"
+            android:exported="false" />
+        <activity
+            android:name=".permintaanperktr"
+            android:exported="false" />
+        <activity
+            android:name=".persetujuan"
+            android:exported="false" />
+        <activity
+            android:name=".permintaan"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard_pengadaan"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard_manajemen"
+            android:exported="false" />
+        <activity
+            android:name=".mintabrg"
+            android:exported="false" />
+        <activity
             android:name=".StokBrgUser"
             android:exported="false" />
         <activity

@@ -22,7 +22,7 @@ import java.util.Date;
 public class tambah_stok extends AppCompatActivity {
 
     ImageButton back, home, btntambah;
-    EditText Noinven, Txtket, Txttgl, Txtnama;
+    EditText Namabrg, Jmlh, Vendor, Tgl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +32,10 @@ public class tambah_stok extends AppCompatActivity {
         back = findViewById(R.id.back);
         home = findViewById(R.id.home);
         btntambah = findViewById(R.id.btntambah);
-        Noinven = findViewById(R.id.Noinven);
-        Txtket = findViewById(R.id.Txtket);
-        Txttgl = findViewById(R.id.Txttgl);
-        Txtnama = findViewById(R.id.Txtnama);
+        Namabrg = findViewById(R.id.namabrg);
+        Jmlh = findViewById(R.id.Jmlh);
+        Vendor = findViewById(R.id.Vendor);
+        Tgl = findViewById(R.id.Tgl);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,12 +48,12 @@ public class tambah_stok extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(tambah_stok.this, dashboard_adm.class);
+                Intent pindah = new Intent(tambah_stok.this, dashboard_pengadaan.class);
                 startActivity(pindah);
             }
         });
 
-        Txttgl.setOnClickListener(new View.OnClickListener() {
+        Tgl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Mendapatkan tanggal saat ini
@@ -69,7 +69,7 @@ public class tambah_stok extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                                 // Mengatur tanggal yang dipilih pada EditText
                                 String selectedDate = dayOfMonth + "/" + (monthOfYear +1) + "/" + year;
-                                Txttgl.setText(selectedDate);
+                                Tgl.setText(selectedDate);
                             }
                         }, year, month, day);
 
@@ -81,11 +81,10 @@ public class tambah_stok extends AppCompatActivity {
         btntambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String no = Noinven.getText().toString();
-                String ket = Txtket.getText().toString();
-                String tgl = Txttgl.getText().toString();
-                String nama = Txtnama.getText().toString();
-                String kategori = nama;
+                String nama = Namabrg.getText().toString();
+                String jlh = Jmlh.getText().toString();
+                String vendor = Vendor.getText().toString();
+                String tgl = Tgl.getText().toString();
 
                 // Ambil data dari database
                 ConnectionClass connectionClass = new ConnectionClass();
@@ -93,18 +92,17 @@ public class tambah_stok extends AppCompatActivity {
                 // Anda dapat menggunakan koneksi ke database dan eksekusi query di sini
 
                 try {
-                    String query = "INSERT INTO TB_STOK (No_Inventaris, Keterangan, Tgl_Penyerahan, Nama_Barang, NAMA_KATEGORI) VALUES (?,?,?,?,?)";
+                    String query = "INSERT INTO TB_STOCK (NAMA_BARANG, JUMLAH, VENDOR, Tgl_Penyerahan) VALUES (?,?,?,?)";
 
                     PreparedStatement statement = connection.prepareStatement(query);
-                    statement.setString(1, no);
-                    statement.setString(2, ket);
+                    statement.setString(1, nama);
+                    statement.setString(2, jlh);
+                    statement.setString(3, vendor);
 
                     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
                     Date date = dateFormat.parse(tgl);
 
-                    statement.setDate(3, new java.sql.Date(date.getTime()));
-                    statement.setString(4, kategori);
-                    statement.setString(5, nama);
+                    statement.setDate(4, new java.sql.Date(date.getTime()));
 
                     int rowsInserted = statement.executeUpdate();
                     if (rowsInserted > 0) {

@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 public class dashboard_adm extends AppCompatActivity {
 
-    ImageButton kategori, barang, lihatstok, tambah, hapus, ubahbrg, logout;
+    ImageButton kategori, barang, lihatstok, tambah, hapus, ubahbrg, minta, logout;
 
     TextView jmlhstok, jmlhbrg;
     @Override
@@ -30,6 +30,7 @@ public class dashboard_adm extends AppCompatActivity {
         tambah = findViewById(R.id.tambah);
         hapus = findViewById(R.id.hapus);
         ubahbrg = findViewById(R.id.ubahbrg);
+        minta = findViewById(R.id.permintaan);
         jmlhbrg = findViewById(R.id.jmlhbrg);
         jmlhstok = findViewById(R.id.jmlhstok);
         logout = findViewById(R.id.logout);
@@ -39,6 +40,7 @@ public class dashboard_adm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_adm.this, Login.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -47,6 +49,7 @@ public class dashboard_adm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_adm.this, TmbhKategori.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -55,14 +58,25 @@ public class dashboard_adm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_adm.this, SemuaBrg.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
         lihatstok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(dashboard_adm.this, StokBrg.class);
+                Intent pindah = new Intent(dashboard_adm.this, StokBrgUser.class);
                 startActivity(pindah);
+                finish();
+            }
+        });
+
+        minta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pindah = new Intent(dashboard_adm.this, menupermintaan.class);
+                startActivity(pindah);
+                finish();
             }
         });
 
@@ -71,6 +85,7 @@ public class dashboard_adm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_adm.this, tambah_brg.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -79,6 +94,7 @@ public class dashboard_adm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_adm.this, scan_hapusbrg.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -87,6 +103,7 @@ public class dashboard_adm extends AppCompatActivity {
             public void onClick(View v) {
                 Intent pindah = new Intent(dashboard_adm.this, scan_ubahbrg.class);
                 startActivity(pindah);
+                finish();
             }
         });
 
@@ -95,7 +112,7 @@ public class dashboard_adm extends AppCompatActivity {
 
         if (connection != null) {
             try {
-                String query = "SELECT COUNT(*) AS count FROM TB_STOK " +
+                String query = "SELECT COUNT(*) AS count FROM TB_STOCK " +
                         "UNION " +
                         "SELECT COUNT(*) AS count FROM TB_BARANG";
                 PreparedStatement statement = connection.prepareStatement(query);

@@ -4,11 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    android:orientation="vertical"
-    tools:context=".hapusbrg">
-
-
+    android:background="@color/primary"
+    tools:context=".permintaanbrg">
 
     <ImageButton
         android:id="@+id/back"
@@ -22,49 +19,50 @@
         android:background="@drawable/pict"/>
 
     <TextView
+        android:id="@+id/txtkategori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/back"
         android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif"
-        android:text="Hapus Barang"
-        android:textStyle="bold"
-        android:textColor="@color/primary"
+        android:text="Permintaan Barang"
         android:textSize="20dp"
-        android:id="@+id/hps"/>
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        ></TextView>
 
     <LinearLayout
+        android:id="@+id/ktk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ktk"
-        android:layout_below="@+id/hps"
+        android:layout_below="@+id/txtkategori"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/second"
-        android:orientation="vertical">
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <TextView
-            android:id="@+id/textno"
+            android:id="@+id/textnama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/hps"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:text="NO INVENTARIS"
+            android:layout_below="@+id/jeniskateg"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="NAMA"
             android:textColor="@color/primary"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/no"
+            android:id="@+id/Nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textno"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:hint="No Inventaris"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:hint="Nama"
             android:textColor="@color/primary"
             android:textSize="15dp" />
 
@@ -73,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/no"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="NAMA BARANG"
             android:textColor="@color/primary"
@@ -85,125 +83,96 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textnamabrg"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
             android:hint="nama barang"
             android:textColor="@color/primary"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/textnrk"
+            android:id="@+id/texttgl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/namabrg"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="NRK"
+            android:text="TANGGAL PESAN"
             android:textColor="@color/primary"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/nrk"
+            android:id="@+id/Tgl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textnrk"
-            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/texttgl"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
-            android:hint="Nrk"
+            android:hint="Tanggal Pesan"
             android:textColor="@color/primary"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/textnama"
+            android:id="@+id/textket"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nrk"
-            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/tgl"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="NAMA PENGGUNA"
+            android:text="KETERANGAN"
             android:textColor="@color/primary"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/nama"
+            android:id="@+id/keterangan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textnama"
-            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/textket"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
-            android:hint="Nama"
+            android:hint="Keterangan"
             android:textColor="@color/primary"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/textjbtn"
+            android:id="@+id/textkeputusan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nama"
-            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/ket"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="JABATAN"
+            android:text="KEPUTUSAN"
             android:textColor="@color/primary"
             android:textSize="15dp"
             android:textStyle="bold" />
 
-
         <TextView
-            android:id="@+id/jbtn"
+            android:id="@+id/keputusan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textjbtn"
-            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/textkeputusan"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="5dp"
-            android:hint="Jabatan"
+            android:hint="Belum Ada Keputusan"
             android:textColor="@color/primary"
             android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/txttgl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/jbtn"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:text="TANGGAL TERIMA"
-            android:textColor="@color/primary"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/tgl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txttgl"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            android:hint="Tanggal diterima"
-            android:textColor="@color/primary"
-            android:textSize="15dp" />
-
     </LinearLayout>
 
-
     <ImageButton
+        android:id="@+id/kirim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/ktk"
-        android:background="@drawable/btn_hapus"
-        android:scaleType="center"
-        android:id="@+id/btnhapus"/>
+        android:background="@drawable/btn_kirim"
+        android:layout_below="@+id/ktk"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/underbox2"/>
+        android:background="@drawable/underbox"/>
 
     <ImageButton
         android:id="@+id/home"
@@ -214,6 +183,6 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/home"
         android:scaleType="centerInside"
-        android:background="@drawable/pict"/>
+        android:background="@drawable/pict2"/>
 
 </RelativeLayout>

@@ -42,7 +42,6 @@ public class tambah_brg extends AppCompatActivity {
 
         back = findViewById(R.id.back);
         home = findViewById(R.id.home);
-//        Namabrg = findViewById(R.id.Namabrg);
         Namabrg = findViewById(R.id.spinnerNamabrg);
         Textid = findViewById(R.id.Txtid);
         Textno = findViewById(R.id.Txtno);
@@ -136,7 +135,6 @@ public class tambah_brg extends AppCompatActivity {
                     }else{
                         Toast.makeText(tambah_brg.this, "Data gagal Ditambahkan", Toast.LENGTH_LONG).show();
                     }
-
                     statement.close();
                     connection.close();
                 } catch (SQLException e) {

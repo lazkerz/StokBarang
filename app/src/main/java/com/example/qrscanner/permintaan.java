@@ -14,27 +14,26 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class semuastok_user extends AppCompatActivity {
+public class permintaan extends AppCompatActivity {
 
     RecyclerView myrecycler;
-
     ImageButton home, back;
 
-    private StokAdapter stokAdapter;
+    private MintaAdapter mintaAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_semuastok_user);
+        setContentView(R.layout.activity_permintaan);
 
         home = findViewById(R.id.home);
         back = findViewById(R.id.back);
-        myrecycler = findViewById(R.id.stokRecycler);
+        myrecycler = findViewById(R.id.mintaRecycler);
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(semuastok_user.this, dashboard_user.class);
+                Intent pindah = new Intent(permintaan.this, dashboard_manajemen.class);
                 startActivity(pindah);
             }
         });
@@ -42,13 +41,13 @@ public class semuastok_user extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(semuastok_user.this, dashboard_user.class);
+                Intent pindah = new Intent(permintaan.this, dashboard_manajemen.class);
                 startActivity(pindah);
             }
         });
 
-        stokAdapter = new StokAdapter(this);
-        myrecycler.setAdapter(stokAdapter);
+        mintaAdapter = new MintaAdapter(this);
+        myrecycler.setAdapter(mintaAdapter);
         myrecycler.setLayoutManager(new LinearLayoutManager(this));
 
         fetchData();
@@ -60,29 +59,28 @@ public class semuastok_user extends AppCompatActivity {
         Connection connection = connectionClass.CONN();
 
         try {
-            String selectedCategory = getIntent().getStringExtra("NAMA_BARANG");
-            String query = "SELECT NAMA_BARANG, JUMLAH, VENDOR, TGL_PENYERAHAN " +
-                    "FROM TB_STOCK WHERE NAMA_BARANG = ?" +
-                    "ORDER BY Tgl_Penyerahan DESC";
-//           Statement statement = connection.createStatement();
+            String query = "SELECT ID, NAMA, NAMA_BARANG, TGL_PESAN, KETERANGAN, KEPUTUSAN " +
+                    "FROM TB_PERMINTAAN";
+//            Statement statement = connection.createStatement();
             // Query SELECT
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, selectedCategory);
 
             // Menjalankan query
             ResultSet resultSet = statement.executeQuery();
             // Loop melalui hasil resultSet
             while (resultSet.next()) {
                 // Mendapatkan nilai kolom
-                String namabrg = resultSet.getString("NAMA_BARANG");
-                String Jlh = resultSet.getString("JUMLAH");
-                String Vendor = resultSet.getString("VENDOR");
-                String Tgl = resultSet.getString("TGL_PENYERAHAN");
+                String Id = resultSet.getString("ID");
+                String Nama = resultSet.getString("NAMA");
+                String NamaBrg = resultSet.getString("NAMA_BARANG");
+                String Tgl = resultSet.getString("Tgl_Pesan");
+                String Keterangan = resultSet.getString("KETERANGAN");
+                String Keputusan = resultSet.getString("KEPUTUSAN");
 
-                Stok stok = new Stok(0, namabrg, Jlh, Vendor, Tgl);
-                stokAdapter.addStok(stok);
+                Minta minta = new Minta(0, Id, Nama, NamaBrg, Tgl, Keterangan, Keputusan);
+                mintaAdapter.addMinta(minta);
             }
-            stokAdapter.notifyDataSetChanged();
+            mintaAdapter.notifyDataSetChanged();
 
             resultSet.close();
             statement.close();

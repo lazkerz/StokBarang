@@ -247,6 +247,33 @@
         android:id="@+id/txtubah"/>
 
     <ImageButton
+        android:id="@+id/permintaan"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="615dp"
+        android:layout_marginLeft="90dp"
+        android:src="@drawable/ubahbrg"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="670dp"
+        android:layout_marginLeft="49dp"
+        android:text="Permintaan Barang"
+        android:textColor="@color/primary"
+        android:textSize="15dp"
+        android:id="@+id/txtpermintaan"/>
+
+    <ImageButton
         android:id="@+id/hapus"
         android:layout_width="160dp"
         android:layout_height="90dp"
@@ -275,7 +302,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="20dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/underbox"/>
 

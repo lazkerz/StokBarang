@@ -13,37 +13,39 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StokAdapter extends RecyclerView.Adapter<StokAdapter.MyViewHolder>{
+public class MintaAdapter extends RecyclerView.Adapter<MintaAdapter.MyViewHolder>{
 
 
     private Context context;
-    private List<Stok> stokList;
+    private List<Minta> mintaList;
 
-    public StokAdapter(Context context) {
+    public MintaAdapter(Context context) {
         this.context = context;
-        stokList = new ArrayList<>();
+        mintaList = new ArrayList<>();
     }
 
-    public void addStok(Stok stok){
-        stokList.add(stok);
+    public void addMinta(Minta minta){
+        mintaList.add(minta);
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.data_stok,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.data_permintaan,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        Stok stok = stokList.get(position);
-        holder.namabrg.setText(stok.getnamaBrg());
-        holder.Jmlh.setText(stok.getJmlh());
-        holder.Vendor.setText(stok.getVendor());
-        holder.tgl.setText(stok.getTgl());
+        Minta minta = mintaList.get(position);
+        holder.id.setText(minta.getIdpermintaan());
+        holder.nama.setText(minta.getNama());
+        holder.namabrg.setText(minta.getNamaBrg());
+        holder.tgl.setText(minta.getTgl());
+        holder.ket.setText(minta.getKeterangan());
+        holder.keputusan.setText(minta.getKeputusan());
         holder.myCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +58,11 @@ public class StokAdapter extends RecyclerView.Adapter<StokAdapter.MyViewHolder>{
 
     @Override
     public int getItemCount() {
-        return stokList.size();
+        return mintaList.size();
     }
 
-    public Stok getItem(int position) {
-        return stokList.get(position);
+    public Minta getItem(int position) {
+        return mintaList.get(position);
     }
 
     private OnItemClickListener itemClickListener;
@@ -75,17 +77,18 @@ public class StokAdapter extends RecyclerView.Adapter<StokAdapter.MyViewHolder>{
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-
-        private TextView namabrg, Jmlh, Vendor, tgl;
+        private TextView id,nama, namabrg, tgl, ket, keputusan;
 
         private CardView myCardView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            id = itemView.findViewById(R.id.Idpermintaan);
+            nama = itemView.findViewById(R.id.nama);
             namabrg = itemView.findViewById(R.id.namabrg);
-            Jmlh = itemView.findViewById(R.id.Jmlh);
-            Vendor = itemView.findViewById(R.id.Vendor);
             tgl = itemView.findViewById(R.id.tgl);
+            ket = itemView.findViewById(R.id.ket);
+            keputusan = itemView.findViewById(R.id.keputusan);
             myCardView = itemView.findViewById(R.id.myCardView);
 
         }

@@ -15,36 +15,37 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class StokBrgUser extends AppCompatActivity {
+public class persetujuan extends AppCompatActivity {
+
     ImageButton home, back;
 
     RecyclerView myrecycler;
 
-    private UserAdapter userAdapter;
+    private SetujuAdapter setujuAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_stok_brg);
+        setContentView(R.layout.activity_persetujuan);
 
         home = findViewById(R.id.home);
         back = findViewById(R.id.back);
-        myrecycler = findViewById(R.id.kategoriRecycler);
+        myrecycler = findViewById(R.id.setujuRecycler);
 
-        userAdapter = new UserAdapter(this);
-        myrecycler.setAdapter(userAdapter);
+        setujuAdapter = new SetujuAdapter(this);
+        myrecycler.setAdapter(setujuAdapter);
         myrecycler.setLayoutManager(new LinearLayoutManager(this));
 
-        userAdapter.setOnItemClickListener(new UserAdapter.OnItemClickListener() {
+        setujuAdapter.setOnItemClickListener(new SetujuAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 // Aksi yang ingin Anda lakukan saat item di RecyclerView diklik
-                String selectedCategory = userAdapter.getItem(position).getKategori();
-                Toast.makeText(StokBrgUser.this, "Barang terpilih: " + selectedCategory, Toast.LENGTH_SHORT).show();
+                String selectedCategory = setujuAdapter.getItem(position).getPersetujuan();
+                Toast.makeText(persetujuan.this, "Permintaan terpilih: " + selectedCategory, Toast.LENGTH_SHORT).show();
 
                 // Berpindah ke aktivitas lain dengan Intent
-                Intent pindah = new Intent(StokBrgUser.this, semuastok_user.class);
-                pindah.putExtra("NAMA_BARANG", selectedCategory);
+                Intent pindah = new Intent(persetujuan.this, permintaanperktr.class);
+                pindah.putExtra("KETERANGAN", selectedCategory);
                 startActivity(pindah);
             }
         });
@@ -52,7 +53,7 @@ public class StokBrgUser extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(StokBrgUser.this, dashboard_user.class);
+                Intent pindah = new Intent(persetujuan.this, dashboard_manajemen.class);
                 startActivity(pindah);
             }
         });
@@ -60,7 +61,7 @@ public class StokBrgUser extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(StokBrgUser.this, dashboard_user.class);
+                Intent pindah = new Intent(persetujuan.this, dashboard_manajemen.class);
                 startActivity(pindah);
             }
         });
@@ -73,31 +74,28 @@ public class StokBrgUser extends AppCompatActivity {
         Connection connection = connectionClass.CONN();
 
         try {
-            String query ="SELECT NAMA_BARANG, JUMLAH FROM TB_STOCK";
-//            String query = "SELECT NAMA_BARANG, COUNT(*) AS count FROM TB_STOCK " +
-//                    "WHERE NAMA_BARANG IN (SELECT NAMA_BARANG FROM TB_STOCK) " +
-//                    "GROUP BY NAMA_BARANG";//            Statement statement = connection.createStatement();
+            String query = "SELECT KETERANGAN, COUNT(*) AS count FROM TB_PERMINTAAN " +
+                    "WHERE KETERANGAN IN (SELECT KETERANGAN FROM TB_PERMINTAAN) " +
+                    "GROUP BY KETERANGAN";//            Statement statement = connection.createStatement();
             // Query SELECT
             PreparedStatement statement = connection.prepareStatement(query);
 
             // Menjalankan query
             ResultSet resultSet = statement.executeQuery();
-
             // Loop melalui hasil resultSet
             while (resultSet.next()) {
 
-//                int Jumlah = resultSet.getInt("count");
-                String Jumlah = resultSet.getString("JUMLAH");
+                int Jumlah = resultSet.getInt("count");
                 // Mendapatkan nilai kolom
-                String kategoribrg = resultSet.getString("NAMA_BARANG");
+                String keterangan = resultSet.getString("KETERANGAN");
                 String totalText = " : " + Jumlah;
 
-                Kategori kategori = new Kategori(0, kategoribrg, totalText);
-                userAdapter.addKategori(kategori);
+                Setuju setuju = new Setuju(0, keterangan, totalText);
+                setujuAdapter.addSetuju(setuju);
 
             }
 
-            userAdapter.notifyDataSetChanged();
+            setujuAdapter.notifyDataSetChanged();
 
             resultSet.close();
             statement.close();

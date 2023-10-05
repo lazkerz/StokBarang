@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dashboard_pengadaan">
+
+
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/btnlogout"
+        android:scaleType="centerInside"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logout"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="PENGADAAN BARANG"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:id="@+id/inventory"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/box"/>
+
+    <ImageButton
+        android:id="@+id/lihatstok"
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="200dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/dasboard"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="360dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/stok"
+        android:scaleType="fitCenter"
+        android:background="@drawable/pict3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_centerHorizontal="true"
+        android:text="Pengadaan"
+        android:textSize="15dp"
+        android:textColor="@color/primary"
+        android:id="@+id/txtkategori"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/underbox"/>
+
+
+</RelativeLayout>

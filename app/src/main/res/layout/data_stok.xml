@@ -16,47 +16,70 @@
         android:background="@color/second">
 
         <TextView
-            android:id="@+id/textno"
+            android:id="@+id/textnamabrg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
-            android:text="NO INVENTARIS"
+            android:text="NAMA BARANG"
             android:textColor="@color/primary"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/no"
+            android:id="@+id/namabrg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textno"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:hint="No Inventaris"
+            android:hint="Nama Barang"
             android:textColor="@color/primary"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/textket"
+            android:id="@+id/textjmlh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/no"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:text="KETERANGAN"
+            android:text="JUMLAH"
             android:textColor="@color/primary"
             android:textSize="15dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/ket"
+            android:id="@+id/Jmlh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textket"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
-            android:hint="keterangan"
+            android:hint="Jumlah"
+            android:textColor="@color/primary"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/textvendor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Jmlh"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="VENDOR"
+            android:textColor="@color/primary"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Vendor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Jmlh"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:hint="Vendor"
             android:textColor="@color/primary"
             android:textSize="15dp" />
 
@@ -64,7 +87,7 @@
             android:id="@+id/texttgl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/ket"
+            android:layout_below="@+id/Vendor"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:text="TGL PENYERAHAN"
@@ -81,54 +104,8 @@
             android:layout_marginTop="5dp"
             android:hint="Tanggal Penyerahan"
             android:textColor="@color/primary"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/textnamabrg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nrk"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="NAMA BARANG"
-            android:textColor="@color/primary"
             android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/namabrg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textnamabrg"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:hint="Nama Barang"
-            android:textColor="@color/primary"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/textkateg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nama"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:text="KATEGORI"
-            android:textColor="@color/primary"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/kateg"
-            android:layout_width="wrap_content"
-            android:textColor="@color/primary"
-            android:hint="kategori"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_below="@+id/textkateg"
-            android:layout_marginTop="5dp"
             android:layout_marginBottom="15dp"
-            android:textSize="15dp"
             />
 
     </LinearLayout>

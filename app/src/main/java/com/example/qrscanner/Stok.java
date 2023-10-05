@@ -3,45 +3,34 @@ package com.example.qrscanner;
 public class Stok {
 
     private int id;
-    private String noBarang;
-    private String ket;
-    private String tgl;
-    private String namaBarang;
-    private String kategoriBarang;
+    private String namaBrg, Jmlh, Vendor, tgl;
 
-    public Stok(int id, String noBarang, String ket, String tgl, String namaBarang, String kategoriBarang) {
+    public Stok(int id, String namaBrg, String Jmlh, String Vendor, String tgl) {
         this.id = id;
-        this.noBarang = noBarang;
-        this.ket = ket;
+        this.namaBrg = namaBrg;
+        this.Jmlh = Jmlh;
+        this.Vendor = Vendor;
         this.tgl = tgl;
-        this.namaBarang = namaBarang;
-        this.kategoriBarang = kategoriBarang;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getNo() {
-        return noBarang;
+    public String getnamaBrg() {
+        return namaBrg;
     }
 
-    public String getKet() {
-        return ket;
+    public String getJmlh() {
+        return Jmlh;
+    }
+
+    public String getVendor() {
+        return Vendor;
     }
 
     public String getTgl() {
         return tgl;
     }
-
-    public String getBarang() {
-        return namaBarang;
-    }
-
-    public String getKategori() {
-        return kategoriBarang;
-    }
-
-
 
 }

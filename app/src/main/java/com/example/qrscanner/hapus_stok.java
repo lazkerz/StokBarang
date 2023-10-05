@@ -18,7 +18,7 @@ public class hapus_stok extends AppCompatActivity {
 
     ImageButton back, home, btnhapus;
 
-    TextView no, ket, Tgl, namabrg, kateg;
+    TextView Namabrg, Jmlh, Vendor, Tgl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,10 @@ public class hapus_stok extends AppCompatActivity {
         back = findViewById(R.id.back);
         home = findViewById(R.id.home);
         btnhapus = findViewById(R.id.btnhapus);
-        no = findViewById(R.id.no);
-        ket = findViewById(R.id.ket);
+        Namabrg = findViewById(R.id.namabrg);
+        Jmlh = findViewById(R.id.Jmlh);
         Tgl = findViewById(R.id.tgl);
-        namabrg = findViewById(R.id.namabrg);
-        kateg = findViewById(R.id.kateg);
+        Vendor = findViewById(R.id.Vendor);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +44,7 @@ public class hapus_stok extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pindah = new Intent(hapus_stok.this, dashboard_adm.class);
+                Intent pindah = new Intent(hapus_stok.this, dashboard_pengadaan.class);
                 startActivity(pindah);
             }
         });
@@ -61,7 +60,7 @@ public class hapus_stok extends AppCompatActivity {
 
                 if (connection != null) {
                     try {
-                        String query = "DELETE FROM TB_STOK WHERE ID = ?";
+                        String query = "DELETE FROM TB_STOCK WHERE ID = ?";
                         PreparedStatement statement = connection.prepareStatement(query);
                         statement.setString(1, idstok);
 
@@ -95,8 +94,8 @@ public class hapus_stok extends AppCompatActivity {
         Connection connection = connectionClass.CONN();
 
         try {
-            String query = "SELECT No_Inventaris, Keterangan, Tgl_Penyerahan, Nama_Barang, NAMA_KATEGORI " +
-                    "FROM TB_STOK WHERE ID = ?";
+            String query = "SELECT NAMA_BARANG, JUMLAH, VENDOR, Tgl_Penyerahan " +
+                    "FROM TB_STOCK WHERE ID = ?";
 //            Statement statement = connection.createStatement();
             // Query SELECT
             PreparedStatement statement = connection.prepareStatement(query);
@@ -107,17 +106,15 @@ public class hapus_stok extends AppCompatActivity {
             // Loop melalui hasil resultSet
             while (resultSet.next()) {
                 // Mendapatkan nilai kolom
-                String noinventaris = resultSet.getString("No_Inventaris");
-                String Ket = resultSet.getString("Keterangan");
+                String namabrg = resultSet.getString("NAMA_BARANG");
+                String jlh = resultSet.getString("JUMLAH");
+                String vendor = resultSet.getString("VENDOR");
                 String tgl = resultSet.getString("Tgl_Penyerahan");
-                String namaBarang = resultSet.getString("Nama_Barang");
-                String kategoribrg = resultSet.getString("NAMA_KATEGORI");
 
                 // Contoh: Tampilkan nilai kolom pada TextView
-                no.setText(noinventaris);
-                namabrg.setText(namaBarang);
-                ket.setText(Ket);
-                kateg.setText(kategoribrg);
+                Namabrg.setText(namabrg);
+                Jmlh.setText(jlh);
+                Vendor.setText(vendor);
                 Tgl.setText(tgl);
             }
 
